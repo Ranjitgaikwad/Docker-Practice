@@ -1,0 +1,41 @@
+name: ums-stack
+services:
+    web-nginx:
+      image: nginx:latest
+      container_name: ums-nginx
+      ports: 
+      - "8080:8080"
+    
+      depends_on:
+       - app-ums
+
+      volumes:
+       - ./nginx.conf:/etc/nginx/nginx.conf
+
+    app-ums:
+      image: ranjitgaikwad/usermgmt-webapp-v6:latest
+      ports: 
+       - "8080"
+      deploy:
+       replicas: 3
+      depends_on:
+       - db-mysql
+      environment:
+       - DB_HOSTNAME=db-mysql
+       - DB_PORT=3306
+       - DB_USERNAME=root
+       - DB_PASSWORD=dbpassword11
+    
+    db-mysql:
+     container_name: ums-mysqldb
+     image: mysql:8.0
+     ports:
+      - "3306:3306"
+     environment:
+      MYSQL_ROOT_PASSWORD: dbpassword11
+      MYSQL_DATABASE: webappdb
+     volumes:
+      - mydb:/var/lib/mysql
+
+volumes:
+   mydb:

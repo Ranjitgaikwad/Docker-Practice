@@ -1,0 +1,21 @@
+name: ums-stack
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: ums-mysqldb
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: dbpassword11
+      MYSQL_DATABASE: webappdb
+    ports:
+     - "3306:3306"
+    volumes:
+     - mydb:/var/lib/mysql
+volumes:
+ mydb:
+  name: ums-mysqldb-data-v1
+  driver: local
+  labels:
+   - "project= ums-stack"
+   - "component= datapase"
+   - "purpose= persistent-storage"
