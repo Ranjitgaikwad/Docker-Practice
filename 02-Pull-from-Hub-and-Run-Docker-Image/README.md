@@ -28,9 +28,6 @@ docker images
 # Pull Docker image from Docker Hub
 docker pull ranjitgaikwad/mynginx:v1
 
-# Alternatively, pull from GitHub Packages (no download limits)
-docker pull ghcr.io/ranjitgaikwad/mynginx:v1
-
 # List Docker images to confirm the image is pulled
 docker images
 ```
