@@ -1,6 +1,6 @@
 ---
 title: "Create Docker Image with Labels and Push to Docker Hub"
-description: "Learn how to create a Docker image with labels, build it, inspect it, and push it to Docker Hub. 
+description: "Learn how to create a Docker image with labels, build it, inspect it, and push it to Docker Hub."
 
 # Create Docker Image with Labels and Push to Docker Hub
 
