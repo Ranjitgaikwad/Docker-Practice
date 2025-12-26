@@ -1,6 +1,6 @@
 ---
 title: "How to Create and Push Docker Images to Docker Hub: A Step-by-Step Guide"
-description: "Learn how to build a Docker image, tag it, and push it to Docker Hub. 
+description: "Learn how to build a Docker image, tag it, and push it to Docker Hub"
 ---
 
 # How to Create and Push Docker Images to Docker Hub: A Step-by-Step Guide
